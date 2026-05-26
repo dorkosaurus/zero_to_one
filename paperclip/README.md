@@ -1,57 +1,39 @@
-# Paperclip 
+# Computing over 11M scientific publications with PaperClip
 
-URL: https://gxl.ai/blog/paperclip#conclusion
+We still haven't cracked mining publication data within Drug Discovery but I think Paperclip by @GXL is a step in the right direction.  I don't think this is a production-grade tool but do think it's amazing for ad-hoc manually-run workflows for computationally savvy personnel.
 
-# Overview
+In a nutshell, it's a toolkit that provides traditional search-engine like search (Elasticsearch BM25 + vector similarity) with LLM capabilities to allow you to compute over the free corpus of scientific publications.  https://paperclip.gxl.ai/docs
 
-*Today we're releasing Paperclip, the agent-native counterpart to Sy. Whereas humans use a chat-based UI, agents work best within the rich text environment of a command-line interface. Paperclip gives your agent direct CLI access to 8M+ papers—standard search and retrieval functions, plus several powerful tools that, when used together, let agents actually explore, deep-dive, and synthesize.*
+The sweet spot for drug discovery given my experience:  extracting structured content after searching the corpus of publicly available scientific publications for sets of key words.
 
-# Operations
-
-## Search
-
-*As a starting point, we've implemented hybrid search, combining BM25 and embedding-based retrieval. The agent can also select a specific ranking mechanism more suited for its queries. For token efficiency, rather than return the entire abstract of each search result, we return a 1–2 sentence TL;DR summary.*
-
-BM25:  https://en.wikipedia.org/wiki/Okapi_BM25
-
-*BM25 is a bag-of-words retrieval function that ranks a set of documents based on the query terms appearing in each document, regardless of their proximity within the document.*
-
+It was pleasantly easy to install:
 
 ```
-paperclip search "KRAS G12C resistance mechanisms" -n 5
-
-Found 5 papers  [s_74db6679]
-
-1. M1C is a druggable target for NSCLC KRAS G12C mutant tumors resistant to KRAS inhibitors
-     bio_5c6e4b117ab6 · bioRxiv · 2025-12-02
-     “M1C protein expression drives resistance to sotorasib by promoting EMT, and targeting M1C reverses it.”
-
-2. Modeling response to AZD4625 in KRAS G12C NSCLC patient-derived xenografts
-     PMC12765001 · British Journal of Cancer · 2025-10-11
-     “mTOR signaling was identified as a potential mechanism of primary resistance to the drug.”
-
-3. Genetic mechanisms of resistance to targeted KRAS inhibition
-     bio_d7a242096fc0 · bioRxiv · 2025-08-04
-     “CRISPR screens identified resistance mutations, with CIC mutations being a notable example.”
-
-4. Combining EGFR and KRAS G12C Inhibitors for Advanced Colorectal Cancer
-     PMC11340593 · J Cancer Immunol · 2024-08-07
-     “EGFR + KRAS G12C inhibitor combinations show improved efficacy vs monotherapy.”
-
-5. Inhibition of ULK1/2 and KRAS G12C controls tumor growth in lung cancer
-     bio_f7c3187b7275 · bioRxiv · 2024-02-06
-     “Combining KRAS G12C and ULK1/2 inhibition synergistically reduces tumor growth.”
-
+curl -fsSL https://paperclip.gxl.ai/install.sh | bash
 ```
 
-## Grep
+If you don't want to install it locally it also exposes MCP end points you can connect to as well.
 
-## Map
+I focused on 2 use cases:
 
-## Ask-image
+* Gathering cell types about a target (commonly needed for discovery biology and target discvory).  In this case, I used LRRK2 (linked to Parkinson's Disease).  
+* Understanding the phenotypic consequences of upregulating a target (I used YAP) - this has broad applications but is especially useful to toxicologists.  The key challenge is that most evidence of perturbation is focused on knocking out a target or downregulating in some way.  But often times, we seek to therapeutically intervene by upregulating a target. Toxicologists need to mine the literature to achieve this and so I sought to find out if Paperclip could make a dent here.
 
-## sql
+I found both use cases remarkably easy to execute (with Claude's help). Paperclip can return up to 1000 results via search but for the purpose of my testing, I kept it to 15.  
 
-## from
+The key hiccup:  it doesn't reliably work across steps when executed in bash.  There seems to be some kind of race condition between the `map` and `grep` step that creeps up often enough to not make me want to embed this in an algorithmic workflow.  
 
+Example outputs:
 
+* LRK22 cell types:
+* Phenotypic consequences of upregulating YAP:  
+
+Source code here:  https://github.com/dorkosaurus/zero_to_one/tree/main/paperclip
+
+Run the code with make:
+
+* make lrrk2
+* make yap
+* make clean
+
+Loom video here demoing usage: 

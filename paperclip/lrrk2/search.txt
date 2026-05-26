@@ -1,0 +1,82 @@
+Found 13 papers  [s_9db2ba8b]
+
+  1. How Parkinson’s Disease-Linked LRRK2 Mutations Affect Different CNS Cell Types
+     Hannah M. Bailey, Mark R. Cookson
+     PMC11492021 · Journal of Parkinson's Disease · 2024-06-15
+     https://doi.org/10.3233/JPD-230432
+     "This review examines how Parkinson's disease-linked LRRK2 mutations impact various central nervous system cell types. Findings highlight LRRK2's prominent role in non-neuronal brain cells, suggesting a significant contribution to PD pathogenesis beyond neurons."
+
+  2. In-cell cryo-electron tomography reveals differential effects of type I and type II kinase inhibitors on LRRK2 filament formation and microtubule association
+     Tamar Basiashvili, Joshua Hutchings, Siyu Chen, Eva P. Karasmanis, W. Alexander Flaherty, Andres E. ...
+     bio_22d0f3497091 · bioRxiv · 2025-12-18
+     https://doi.org/10.64898/2025.12.18.694444
+     "This study used in-cell cryo-electron tomography to investigate how different kinase inhibitors affect LRRK2 filament formation. Type I inhibitors promoted LRRK2 filament decoration and bundling around microtubules, while type II inhibitors did not."
+
+  3. Refinement Contrastive Learning of Cell-Gene Associations for Unsupervised Cell Type Identification
+     Liang Peng, Haopeng Liu, Yixuan Ye, Cheng Liu, Wenjun Shen, Si Wu, Hau-San Wong
+     arx_2512.10640 · arXiv · 2025-12-11
+     "This study introduces a contrastive learning framework that integrates cell-gene associations to improve unsupervised cell type identification. The method effectively refines cell embeddings by capturing biological relationships, leading to more accurate cell type identification."
+
+  4. LRRK2 Affects Vesicle Trafficking, Neurotransmitter Extracellular Level and Membrane Receptor Localization
+     Rossana Migheli, Maria Grazia Del Giudice, Ylenia Spissu, Giovanna Sanna, Yulan Xiong, Ted M. Dawson...
+     PMC3805556 · PMC · 2013-01-01
+     https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3805556/
+     "This study investigated LRRK2's role in vesicle trafficking and neurotransmitter levels. Mutant LRRK2 increases extracellular dopamine and alters dopamine receptor localization, indicating a key role in neuronal vesicle trafficking."
+
+  5. Regulation of LRRK2 Expression Points to a Functional Role in Human Monocyte Maturation
+     Jonathan Thévenet, Rosanna Pescini Gobert, Robertus Hooft van Huijsduijnen, Christoph Wiessner, Yves...
+     PMC3124520 · PMC · 2011-01-01
+     https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3124520/
+     "LRRK2 expression was analyzed in human peripheral blood mononuclear cells, particularly monocytes. Higher LRRK2 levels correlate with monocyte maturation, suggesting a functional role in this process."
+
+  6. LRRK2 kinase activity regulates GCase level and enzymatic activity differently depending on cell type in Parkinson’s disease
+     Maria Kedariti, Emanuele Frattini, Pascale Baden, Susanna Cogo, Laura Civiero, Elena Ziviani, Gianlu...
+     PMC9296523 · biomedrxiv · 2022-07-19
+     https://doi.org/10.1038/s41531-022-00354-3
+     "This study investigated how LRRK2 kinase activity impacts GCase levels and activity across different cell types. Findings reveal cell-type-specific regulation of GCase by LRRK2, with implications for Parkinson's disease therapies."
+
+  7. Personalized Cell Segmentation: Benchmark and Framework for Reference-Guided Cell Type Segmentation
+     Bisheng Wang, Jaime S. Cardoso, Lin Wu
+     arx_2603.14321 · arXiv · 2026-03-15
+     "This study introduces a new task for segmenting specific cell types using a reference cell and develops a benchmark dataset. The proposed PerCS-DINO framework effectively segments target cells by integrating image features with reference embeddings."
+
+  8. Differential LRRK2 signalling and gene expression in WT-LRRK2 and G2019S-LRRK2 mouse microglia treated with zymosan and MLi2
+     Iqra Nazish, Adamantios Mamais, Anna Mallach, Conceicao Bettencourt, Alice Kaganovich, Tom Warner, J...
+     bio_6a3b4b3f6c6d · bioRxiv · 2023-09-14
+     https://doi.org/10.1101/2023.09.14.557532
+     "Microglia from WT and G2019S LRRK2 mice were treated with zymosan and MLi2 to study gene expression. Zymosan and MLi2 induced distinct gene expression profiles, with G2019S microglia showing altered iron transport and oxidative stress responses."
+
+  9. LRRK2 interactions with microtubules are independent of LRRK2-mediated Rab phosphorylation
+     Tuyana Malankhanova, Zhiyong Liu, Enquan Xu, Nicole Bryant, Ki Woon Sung, Huizhong Li, Samuel Strade...
+     PMC12238589 · PMC · 2025-05-27
+     https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12238589/
+     "This study investigated LRRK2 interactions with microtubules and their effect on Rab phosphorylation. LRRK2 interacts with tubulin independently of its kinase activity, and microtubule association is not required for Rab phosphorylation."
+
+  10. LRRK2  G2019S mutation suppresses differentiation of Th9 and Treg cells via JAK/STAT3
+     Ningbo Zheng, Roshni Jaffery, Ashley Guerrero, Jiakai Hou, Yuchen Pan, Fang Zhou, Si Chen, Chunyu Xu...
+     bio_af7a664e7803 · bioRxiv · 2024-02-28
+     https://doi.org/10.1101/2024.02.28.582561
+     "The LRRK2 G2019S mutation was studied in T cells using a transgenic mouse model. This mutation suppresses Th9 and Treg cell differentiation by inhibiting the JAK/STAT3 signaling pathway."
+
+  11. Pathogenic LRRK2 requires secondary factors to induce cellular toxicity
+     Evy Lobbestael, Chris Van den Haute, Francesca Macchi, Jean-Marc Taymans, Veerle Baekelandt
+     PMC7560525 · biomedrxiv · 2020-10-30
+     https://doi.org/10.1042/BSR20202225
+     "Pathogenic LRRK2 was studied in various cellular models to understand its toxicity. The findings indicate that LRRK2 overexpression alone is insufficient for toxicity, requiring secondary factors for its effects."
+
+  12. HiCat: A Semi-Supervised Approach for Cell Type Annotation
+     Chang Bi, Kailun Bai, Xing Li, Xuekui Zhang
+     arx_2412.06805 · arXiv · 2024-11-25
+     https://doi.org/10.1093/bib/bbaf428
+     "This study developed a semi-supervised pipeline to annotate cell types in single-cell RNA sequencing data by combining supervised and unsupervised learning. The method accurately classifies known and novel cell types, outperforming existing approaches on benchmark datasets."
+
+  13. Pathologic α-Synuclein Species Activate LRRK2 in Pro-Inflammatory Monocyte and Macrophage Responses
+     Enquan Xu, Ravindra Boddu, Hisham A. Abdelmotilib, Kaela Kelly, Arpine Sokratian, Ashley S. Harms, A...
+     bio_1e3cf8236f6f · bioRxiv · 2020-05-04
+     https://doi.org/10.1101/2020.05.04.077065
+     "Pathologic α-synuclein fibrils activate LRRK2 kinase in pro-inflammatory monocyte-derived macrophages. LRRK2 mutations enhance monocyte recruitment and LRRK2 activity in response to α-synuclein, linking peripheral immune responses to Parkinson's disease."
+
+[284ms, saved to s_9db2ba8b]
+
+💡 Extract data across these results with: map --from s_9db2ba8b "your question"
+[284ms, saved to s_9db2ba8b]

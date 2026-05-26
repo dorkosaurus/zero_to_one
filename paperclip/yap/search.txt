@@ -1,0 +1,95 @@
+Found 15 papers  [s_6222f46f]
+
+  1. Loss of CFIm activates YAP/TAZ and connects mRNA cleavage and polyadenylation inhibition to BRCAness
+     Madeleine Goldthorpe, Jiahui Hou, Abhi Nadendla, Hatice Ulku Osmanbeyoglu, Hun-Way Hwang *
+     bio_44a6bc0b755f · bioRxiv · 2025-10-21
+     https://doi.org/10.1101/2025.10.21.683728
+     "Loss of CFIm in cancer cells activates YAP/TAZ and promotes therapeutic resistance. This loss also induces BRCAness by repressing DNA repair genes, linking mRNA processing to YAP/TAZ and therapeutic outcomes."
+
+  2. The Hippo Signaling Transducer TAZ Regulates Mammary Gland Morphogenesis and Carcinogen-induced Mammary Tumorigenesis
+     Kayla E. Denson, Ashley L. Mussell, He Shen, Alexander Truskinovsky, Nuo Yang, Natesh Parashurama, Y...
+     PMC5915420 · biomedrxiv · 2018-04-24
+     https://doi.org/10.1038/s41598-018-24712-5
+     "Mammary gland-specific expression of active TAZ increased gland size and promoted carcinogen-induced tumor formation in mice. TAZ is crucial for mammary gland development and tumorigenesis."
+
+  3. YAP+: Pad-Layout-Aware Yield Modeling and Simulation for Hybrid Bonding
+     Zhichao Chen, Puneet Gupta
+     arx_2511.05506 · arXiv · 2025-10-20
+     "This study developed YAP+, a yield modeling framework for hybrid bonding that accounts for layout-aware failure mechanisms. The framework accurately predicts yield and significantly speeds up simulation for optimizing bonding processes."
+
+  4. YAP drives cutaneous squamous cell carcinoma formation and progression
+     Zoé Vincent-Mistiaen, Ahmed Elbediwy, Hannah Vanyai, Jennifer Cotton, Gordon Stamp, Emma Nye, Bradle...
+     PMC6147738 · biomedrxiv · 2018-09-20
+     https://doi.org/10.7554/eLife.33304.013
+     "YAP's role in cutaneous squamous cell carcinoma (SCC) formation and progression was investigated. YAP, in conjunction with wound healing, drives the metaplastic transformation of SCC into aggressive spindle cell carcinoma."
+
+  5. YAP, TAZ, and Hippo-Dysregulating Fusion Proteins in Cancer
+     Jordan H. Driskill, Josephine K. Dermawan, Cristina R. Antonescu, Duojia Pan
+     PMC12147517 · PMC · 2024-10-04
+     https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12147517/
+     "This review examines YAP/TAZ and Hippo-dysregulating fusion proteins in cancer. These fusions drive tumor formation through YAP/TAZ activation, presenting potential therapeutic targets."
+
+  6. Distinct and Overlapping Roles of Hippo Effectors YAP and TAZ During Human and Mouse Hepatocarcinogenesis
+     Haichuan Wang, Jingxiao Wang, Shanshan Zhang, Jiaoyuan Jia, Xianqiong Liu, Jie Zhang, Pan Wang, Xinh...
+     PMC7903139 · biomedrxiv · 2021-01-01
+     https://doi.org/10.1016/j.jcmgh.2020.11.008
+     "YAP and TAZ's roles in human and mouse liver cancer were studied. Both YAP and TAZ are crucial for tumor growth, with HCCs often relying on one or the other."
+
+  7. Transient YAP/TAZ inhibition exposes therapeutic vulnerabilities in advanced cancers
+     Marco Jessen, KyungMok Kim, Marie Tollot-Wegner, Anita Cindric Vranesic, Cagla Dönmez, Celina Junker...
+     bio_bcf0b0026e82 · bioRxiv · 2025-07-03
+     https://doi.org/10.1101/2025.07.03.662986
+     "Transient YAP/TAZ inhibition was studied in advanced cancer models. This inhibition suppresses tumor growth by promoting T cell infiltration, and combining it with immune checkpoint blockade overcomes T cell exhaustion, sensitizing resistant tumors to immunotherapy."
+
+  8. Transformation of normal cells by aberrant activation of YAP via cMyc with TEAD
+     Masazumi Nishimoto, Kousuke Uranishi, Masamitsu N. Asaka, Ayumu Suzuki, Yosuke Mizuno, Masataka Hira...
+     PMC6662713 · PMC · 2019-07-29
+     https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6662713/
+     "Overexpression of YAP in normal cells induces tumorigenic transformation by cooperating with TEAD and activating cMYC. This demonstrates YAP is a proto-oncogene that can drive cancer independently of senescence."
+
+  9. A Decomposition Approach for the Gain Function in the Feedback Particle Filter
+     Ruoyu Wang, Huimin Miao, Xue Luo
+     arx_2503.23662 · arXiv · 2025-03-31
+     https://doi.org/10.1109/CDC57313.2025.11312135.
+     "This study developed a decomposition method to approximate the gain function in feedback particle filters. The new approach achieved higher accuracy and faster computation than existing methods."
+
+  10. Pro-Invasive Activity of the Hippo Pathway Effectors YAP and TAZ in Cutaneous
+Melanoma
+     Flore Nallet-Staub, Véronique Marsaud, Ling Li, Cristèle Gilbert, Sophie Dodier, Véronique Bataille,...
+     PMC3938155 · PMC · 2014-01-01
+     https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3938155/
+     "YAP and TAZ, Hippo pathway effectors, were studied in melanoma cell lines and human samples. Their activity promotes melanoma cell invasion and metastasis, suggesting they are potential therapeutic targets."
+
+  11. Distinct and overlapping functions of YAP and TAZ in tooth development and periodontal homeostasis
+     Jing Ma, Haixia Fan, Haixia Geng
+     PMC10800899 · PMC · 2024-01-08
+     https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10800899/
+     "YAP and TAZ, Hippo pathway effectors, are studied for their roles in tooth development and periodontal homeostasis. They translate mechanical signals to regulate these processes, offering potential for clinical treatments."
+
+  12. Control of Tissue Growth and Cell Transformation by the Salvador/Warts/Hippo Pathway
+     Xiaomeng Zhang, Felix A. Grusche, Kieran F. Harvey
+     PMC3281119 · PMC · 2012-01-01
+     https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3281119/
+     "The Salvador-Warts-Hippo pathway's role in tissue growth and cell transformation was studied. YAP's transactivation domain is required for cell migration and invasion, and can contribute to transformation when WW domains are mutated."
+
+  13. Sox2 Regulates Lateral Line Morphogenesis via Yap/Taz-Mediated Mechanotransduction
+     Akshai Janardhana Kurup *, Aya Mikdache, Patricia Diabangouaya, Gwendoline Gros, Camila Garcia-Baudi...
+     bio_7694cde973e4 · bioRxiv · 2025-09-18
+     https://doi.org/10.1101/2025.09.18.677037
+     "Sox2's role in zebrafish lateral line development was studied, focusing on its interaction with Yap/Taz signaling. Sox2 limits proliferation to suppress Yap/Taz activity, ensuring proper organ formation through a biomechanical feedback loop."
+
+  14. YAP1-TAZ/TEAD transcriptional networks restrain differentiation downstream of oncogenic Hedgehog-SMO activity
+     Yao Yuan, Natalia Salinas Parra, Qianming Chen, Ramiro Iglesias-Bartolome *
+     bio_a48f93226e28 · bioRxiv · 2020-12-28
+     https://doi.org/10.1101/2020.12.28.424593
+     "YAP1/TAZ transcriptional inhibition was studied in a basal cell carcinoma mouse model. This inhibition reduces proliferation and increases differentiation by regulating KLF4, with YAP1/TAZ also having TEAD-independent effects."
+
+  15. Reliability and predictability of phenotype information from functional   connectivity in large imaging datasets
+     Jessica Dafflon, Dustin Moraczewski, Eric Earl, Dylan M. Nielson, Gabriel Loewinger, Patrick McClure...
+     arx_2405.00255 · arXiv · 2024-05-01
+     "Researchers trained models to predict traits from brain connectivity in two large datasets. They found that only a few latent traits were reliably predictable, and using these alone matched the performance of using all traits."
+
+[279ms, saved to s_6222f46f]
+
+💡 Extract data across these results with: map --from s_6222f46f "your question"
+[279ms, saved to s_6222f46f]

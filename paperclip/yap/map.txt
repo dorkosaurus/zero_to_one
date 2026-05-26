@@ -1,0 +1,37 @@
+Map complete: 15/15 tasks succeeded in 7215ms
+Results ID: m_1b541128
+Full results: /.gxl/map_m_1b541128.txt
+
+  [success] Loss of CFIm activates YAP/TAZ and connects mRNA cleavage and polyaden  (bio_44a6bc0b755f)
+    {"findings": [{"species": "human", "yap_alteration": "CFIm loss", "alteration_category": "upstream_pathway_loss", "tissue_or_organ": "colon cancer cel
+  [success] The Hippo Signaling Transducer TAZ Regulates Mammary Gland Morphogenes  (PMC5915420)
+    {"findings": [{"species": "mouse", "yap_alteration": "TAZ overexpression", "alteration_category": "overexpression", "tissue_or_organ": "mammary epithe
+  [success] YAP+: Pad-Layout-Aware Yield Modeling and Simulation for Hybrid Bondin  (arx_2511.05506)
+    {"findings": [], "_citations": []}
+  [success] YAP drives cutaneous squamous cell carcinoma formation and progression  (PMC6147738)
+    {"findings": [{"species": "human", "yap_alteration": "YAP1 amplification", "alteration_category": "amplification", "tissue_or_organ": "SCC", "phenotyp
+  [success] YAP, TAZ, and Hippo-Dysregulating Fusion Proteins in Cancer  (PMC12147517)
+    {"findings": [{"species": "mouse", "yap_alteration": "YAP overexpression", "alteration_category": "overexpression", "tissue_or_organ": "liver", "pheno
+  [success] Distinct and Overlapping Roles of Hippo Effectors YAP and TAZ During H  (PMC7903139)
+    {"findings": [{"species": "mouse", "yap_alteration": "Akt/NRas/pCMV (control)", "alteration_category": "overexpression", "tissue_or_organ": "liver", "
+  [success] Transient YAP/TAZ inhibition exposes therapeutic vulnerabilities in ad  (bio_bcf0b0026e82)
+    {"findings": [{"species": "mouse", "yap_alteration": "activated versions of the Notch receptor (NICD) and myristoylated Akt (myr-AKT)", "alteration_ca
+  [success] Transformation of normal cells by aberrant activation of YAP via cMyc   (PMC6662713)
+    {"findings": [{"species": "mouse", "yap_alteration": "YAP overexpression", "alteration_category": "overexpression", "tissue_or_organ": "NIH3T3 cells",
+  [success] A Decomposition Approach for the Gain Function in the Feedback Particl  (arx_2503.23662)
+    {"findings": [], "_citations": []}
+  [success] Pro-Invasive Activity of the Hippo Pathway Effectors YAP and TAZ in Cu  (PMC3938155)
+    {"findings": [{"species": "human", "yap_alteration": "YAP overexpression", "alteration_category": "overexpression", "tissue_or_organ": "melanoma cells
+  [success] Distinct and overlapping functions of YAP and TAZ in tooth development  (PMC10800899)
+    {"findings": [{"species": "mouse", "yap_alteration": "YAP overexpression", "alteration_category": "overexpression", "tissue_or_organ": "dental epithel
+  [success] Control of Tissue Growth and Cell Transformation by the Salvador/Warts  (PMC3281119)
+    {"findings": [{"species": "Drosophila melanogaster", "yap_alteration": "Yki overexpression", "alteration_category": "overexpression", "tissue_or_organ
+  [success] Sox2 Regulates Lateral Line Morphogenesis via Yap/Taz-Mediated Mechano  (bio_7694cde973e4)
+    {"findings": [{"species": "Zebrafish", "yap_alteration": "YAP1 overexpression", "alteration_category": "overexpression", "tissue_or_organ": "posterior
+  [success] YAP1-TAZ/TEAD transcriptional networks restrain differentiation downst  (bio_a48f93226e28)
+    {"findings": [{"species": "mouse", "yap_alteration": "YAP1 overexpression", "alteration_category": "overexpression", "tissue_or_organ": "skin", "pheno
+  [success] Reliability and predictability of phenotype information from functiona  (arx_2405.00255)
+    {"findings": [], "_citations": []}
+
+Full results: /.gxl/map_m_1b541128.txt
+[8.2s, saved to m_1b541128]

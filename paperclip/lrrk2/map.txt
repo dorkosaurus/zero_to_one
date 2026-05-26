@@ -1,0 +1,33 @@
+Map complete: 13/13 tasks succeeded in 5220ms
+Results ID: m_1f85b1f3
+Full results: /.gxl/map_m_1f85b1f3.txt
+
+  [success] How Parkinson’s Disease-Linked LRRK2 Mutations Affect Different CNS Ce  (PMC11492021)
+    {"cell_types_studied": [{"ontology_name": "neuron", "ontology_id": "CL:0000540", "evidence_quote": "LRRK2 is lowly expressed in neurons and prominentl
+  [success] In-cell cryo-electron tomography reveals differential effects of type   (bio_22d0f3497091)
+    {"cell_types_studied": [{"ontology_name": "HEK293FT cell", "ontology_id": "CLO_0000282", "evidence_quote": "We used cryo-CLEM to study how cellular lo
+  [success] Refinement Contrastive Learning of Cell-Gene Associations for Unsuperv  (arx_2512.10640)
+    {"cell_types_studied": [], "_citations": []}
+  [success] LRRK2 Affects Vesicle Trafficking, Neurotransmitter Extracellular Leve  (PMC3805556)
+    {"cell_types_studied": [{"ontology_name": "PC12 cell", "ontology_id": "CLO:0000230", "evidence_quote": "The PC12-TET-ON cell line (Clontech Laboratori
+  [success] Regulation of LRRK2 Expression Points to a Functional Role in Human Mo  (PMC3124520)
+    {"cell_types_studied": [{"ontology_name": "B cell", "ontology_id": "CL:0000236", "evidence_quote": "LRRK2 mRNA and protein was found in circulating CD
+  [success] LRRK2 kinase activity regulates GCase level and enzymatic activity dif  (PMC9296523)
+    {"cell_types_studied": [{"ontology_name": "peripheral blood mononuclear cell", "ontology_id": "CL:0000196", "evidence_quote": "To gain insights into t
+  [success] Personalized Cell Segmentation: Benchmark and Framework for Reference-  (arx_2603.14321)
+    {"cell_types_studied": [], "_citations": []}
+  [success] Differential LRRK2 signalling and gene expression in WT-LRRK2 and G201  (bio_6a3b4b3f6c6d)
+    {"cell_types_studied": [{"ontology_name": "microglial cell", "ontology_id": "CL:0000129", "evidence_quote": "Primary mixed glial cultures were establi
+  [success] LRRK2 interactions with microtubules are independent of LRRK2-mediated  (PMC12238589)
+    {"cell_types_studied": [{"ontology_name": "macrophage", "ontology_id": "CL:0000235", "evidence_quote": "Mouse bone marrow-derived macrophages (BMDMs) 
+  [success] LRRK2  G2019S mutation suppresses differentiation of Th9 and Treg cell  (bio_af7a664e7803)
+    {"cell_types_studied": [{"ontology_name": "naive CD4+ T cell", "ontology_id": "CL:0000895", "evidence_quote": "Na\u00efve CD4+ T cells isolated from s
+  [success] Pathogenic LRRK2 requires secondary factors to induce cellular toxicit  (PMC7560525)
+    {"cell_types_studied": [{"ontology_name": "SH-SY5Y cell line", "ontology_id": "CLO:0000312", "evidence_quote": "SH-SY5Y cells were maintained in DMEM 
+  [success] HiCat: A Semi-Supervised Approach for Cell Type Annotation  (arx_2412.06805)
+    {"cell_types_studied": [], "_citations": []}
+  [success] Pathologic α-Synuclein Species Activate LRRK2 in Pro-Inflammatory Mono  (bio_1e3cf8236f6f)
+    {"cell_types_studied": [{"ontology_name": "microglial cell", "ontology_id": "CL:0000129", "evidence_quote": "Recent data from primary human monocytes 
+
+Full results: /.gxl/map_m_1f85b1f3.txt
+[6.1s, saved to m_1f85b1f3]
