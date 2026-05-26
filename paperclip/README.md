@@ -16,16 +16,16 @@ If you don't want to install it locally it also exposes MCP end points you can c
 
 I focused on 2 use cases:
 
-* Gathering cell types about a target (commonly needed for discovery biology and target discvory).  In this case, I used LRRK2 (linked to Parkinson's Disease).  
+* Gathering cell types about a target (commonly needed for discovery biology and target discovery).  In this case, I used LRRK2 (linked to Parkinson's Disease).  
 * Understanding the phenotypic consequences of upregulating a target (I used YAP) - this has broad applications but is especially useful to toxicologists.  The key challenge is that most evidence of perturbation is focused on knocking out a target or downregulating in some way.  But often times, we seek to therapeutically intervene by upregulating a target. Toxicologists need to mine the literature to achieve this and so I sought to find out if Paperclip could make a dent here.
 
 I found both use cases remarkably easy to execute (with Claude's help). Paperclip can return up to 1000 results via search but for the purpose of my testing, I kept it to 15.  
 
-The key hiccup:  it doesn't reliably work across steps when executed in bash.  There seems to be some kind of race condition between the `map` and `grep` step that creeps up often enough to not make me want to embed this in an algorithmic workflow.  
+The key hiccup:  it doesn't reliably work across steps when executed in bash.  There's an async-write race between map and the .gxl read that needs a retry to be reliable. This creeps up often enough to not make me want to embed this in an algorithmic workflow.  
 
 Example outputs:
 
-* LRK22 cell types: https://github.com/dorkosaurus/zero_to_one/blob/main/paperclip/lrrk2/output_full.tsv
+* LRRK2 cell types: https://github.com/dorkosaurus/zero_to_one/blob/main/paperclip/lrrk2/output_full.tsv
 * Phenotypic consequences of upregulating YAP: https://github.com/dorkosaurus/zero_to_one/blob/main/paperclip/yap/output_full.tsv 
 
 Source code here:  https://github.com/dorkosaurus/zero_to_one/tree/main/paperclip
@@ -36,4 +36,6 @@ Run the code with make:
 * make yap
 * make clean
 
-Loom video here demoing usage: 
+Loom video here demoing usage: https://www.loom.com/share/fb444dd55c4f4398a757e928dc35ca88
+
+
