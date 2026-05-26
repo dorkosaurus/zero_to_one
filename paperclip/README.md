@@ -1,41 +1,34 @@
-# Computing over 11M scientific publications with PaperClip
+# Computing over 11M scientific publications with Paperclip
 
-We still haven't cracked mining publication data within Drug Discovery but I think Paperclip by @GXL is a step in the right direction.  I don't think this is a production-grade tool but do think it's amazing for ad-hoc manually-run workflows for computationally savvy personnel.
+Literature mining in drug discovery remains an unsolved problem. Paperclip by @GXL doesn't solve it, but it's a step in the right direction.   
 
-In a nutshell, it's a toolkit that provides traditional search-engine like search (Elasticsearch BM25 + vector similarity) with LLM capabilities to allow you to compute over the free corpus of scientific publications.  https://paperclip.gxl.ai/docs
+Under the hood: Paperclip uses Elasticsearch BM25 + vector similarity search over the free scientific publication corpus, with LLM capabilities layered on top. Docs here: https://paperclip.gxl.ai/docs
 
-The sweet spot for drug discovery given my experience:  extracting structured content after searching the corpus of publicly available scientific publications for sets of key words.
+Installation of Paperclip was a single curl command.  It also exposes MCP endpoints if you'd rather skip the local install.
 
-It was pleasantly easy to install:
+I ran two use cases that come up in drug discovery:
+
+Gathering cell types associated with LRRK2 (a Parkinson's target). This kind of structured extraction from literature is bread-and-butter for target discovery teams and it just seemed to work.
+
+Mapping phenotypic consequences of upregulating YAP. This one's harder but is especially useful to toxicologists.  The key challenge is that most evidence of perturbation is focused on knocking out a target or downregulating in some way.  But often times, we seek to therapeutically intervene by upregulating a target.  Toxicologists want to know what has been observed in humans when that happens.
+
+Both use cases were easy to execute with Claude's help but one limitation I hit: it doesn't reliably execute multi-step pipelines in bash. There's an async-write race between map and the .gxl read that surfaces often enough to rule this out for embedded algorithmic workflows. Fine for interactive use, not for automation.
+
+
+LRRK2 TSV output: https://github.com/dorkosaurus/zero_to_one/blob/main/paperclip/lrrk2/output_full.tsv
+
+YAP TSV output: https://github.com/dorkosaurus/zero_to_one/blob/main/paperclip/yap/output_full.tsv
+
+Source code: https://github.com/dorkosaurus/zero_to_one/tree/main/paperclip
+
+Running the code should you choose to check it out:
 
 ```
-curl -fsSL https://paperclip.gxl.ai/install.sh | bash
+make lrrk2
+make yap
+make clean
 ```
 
-If you don't want to install it locally it also exposes MCP end points you can connect to as well.
+Loom demo: https://www.loom.com/share/fb444dd55c4f4398a757e928dc35ca88
 
-I focused on 2 use cases:
-
-* Gathering cell types about a target (commonly needed for discovery biology and target discovery).  In this case, I used LRRK2 (linked to Parkinson's Disease).  
-* Understanding the phenotypic consequences of upregulating a target (I used YAP) - this has broad applications but is especially useful to toxicologists.  The key challenge is that most evidence of perturbation is focused on knocking out a target or downregulating in some way.  But often times, we seek to therapeutically intervene by upregulating a target. Toxicologists need to mine the literature to achieve this and so I sought to find out if Paperclip could make a dent here.
-
-I found both use cases remarkably easy to execute (with Claude's help). Paperclip can return up to 1000 results via search but for the purpose of my testing, I kept it to 15.  
-
-The key hiccup:  it doesn't reliably work across steps when executed in bash.  There's an async-write race between map and the .gxl read that needs a retry to be reliable. This creeps up often enough to not make me want to embed this in an algorithmic workflow.  
-
-Example outputs:
-
-* LRRK2 cell types: https://github.com/dorkosaurus/zero_to_one/blob/main/paperclip/lrrk2/output_full.tsv
-* Phenotypic consequences of upregulating YAP: https://github.com/dorkosaurus/zero_to_one/blob/main/paperclip/yap/output_full.tsv 
-
-Source code here:  https://github.com/dorkosaurus/zero_to_one/tree/main/paperclip
-
-Run the code with make:
-
-* make lrrk2
-* make yap
-* make clean
-
-Loom video here demoing usage: https://www.loom.com/share/fb444dd55c4f4398a757e928dc35ca88
-
-
+Shout out to @Julia Gross for introducing me to Paperclip!
