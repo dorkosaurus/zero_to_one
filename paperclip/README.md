@@ -25,8 +25,8 @@ The key hiccup:  it doesn't reliably work across steps when executed in bash.  T
 
 Example outputs:
 
-* LRK22 cell types:
-* Phenotypic consequences of upregulating YAP:  
+* LRK22 cell types: https://github.com/dorkosaurus/zero_to_one/blob/main/paperclip/lrrk2/output_full.tsv
+* Phenotypic consequences of upregulating YAP: https://github.com/dorkosaurus/zero_to_one/blob/main/paperclip/yap/output_full.tsv 
 
 Source code here:  https://github.com/dorkosaurus/zero_to_one/tree/main/paperclip
 
