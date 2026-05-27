@@ -1,0 +1,41 @@
+uniprot_id	gene	label	modality	source	rationale
+P00519	ABL1	positive	kinase	https://www.uniprot.org/uniprotkb/P00519/entry	BCR-ABL; imatinib (Gleevec) target
+P00533	EGFR	positive	kinase	https://www.uniprot.org/uniprotkb/P00533/entry	erlotinib, gefitinib, osimertinib
+O60674	JAK2	positive	kinase	https://www.uniprot.org/uniprotkb/O60674/entry	ruxolitinib (myelofibrosis)
+Q06187	BTK	positive	kinase	https://www.uniprot.org/uniprotkb/Q06187/entry	ibrutinib (CLL)
+P11802	CDK4	positive	kinase	https://www.uniprot.org/uniprotkb/P11802/entry	palbociclib (HR+ breast)
+P07550	ADRB2	positive	gpcr	https://www.uniprot.org/uniprotkb/P07550/entry	salbutamol (beta-2 agonist)
+P11229	CHRM1	positive	gpcr	https://www.uniprot.org/uniprotkb/P11229/entry	muscarinic M1 modulators
+P35372	OPRM1	positive	gpcr	https://www.uniprot.org/uniprotkb/P35372/entry	morphine, opioids
+P51681	CCR5	positive	gpcr	https://www.uniprot.org/uniprotkb/P51681/entry	maraviroc (HIV)
+P10275	AR	positive	nuclear_receptor	https://www.uniprot.org/uniprotkb/P10275/entry	enzalutamide (prostate)
+P03372	ESR1	positive	nuclear_receptor	https://www.uniprot.org/uniprotkb/P03372/entry	tamoxifen
+P37231	PPARG	positive	nuclear_receptor	https://www.uniprot.org/uniprotkb/P37231/entry	pioglitazone (TZDs)
+P04150	NR3C1	positive	nuclear_receptor	https://www.uniprot.org/uniprotkb/P04150/entry	dexamethasone
+P04035	HMGCR	positive	enzyme	https://www.uniprot.org/uniprotkb/P04035/entry	statins (cholesterol)
+P35354	PTGS2	positive	enzyme	https://www.uniprot.org/uniprotkb/P35354/entry	celecoxib (COX-2)
+P12821	ACE	positive	enzyme	https://www.uniprot.org/uniprotkb/P12821/entry	captopril (hypertension)
+P00374	DHFR	positive	enzyme	https://www.uniprot.org/uniprotkb/P00374/entry	methotrexate
+Q13547	HDAC1	positive	enzyme	https://www.uniprot.org/uniprotkb/Q13547/entry	vorinostat
+P09874	PARP1	positive	enzyme	https://www.uniprot.org/uniprotkb/P09874/entry	olaparib (BRCA cancers)
+O60885	BRD4	positive	epigenetic_reader	https://www.uniprot.org/uniprotkb/O60885/entry	JQ1; BET inhibitors in trials
+P10415	BCL2	positive	apoptosis_regulator	https://www.uniprot.org/uniprotkb/P10415/entry	venetoclax (FDA 2016) — once considered undruggable
+Q07820	MCL1	positive	apoptosis_regulator	https://www.uniprot.org/uniprotkb/Q07820/entry	clinical-stage inhibitors (AMG-176, AZD5991)
+P51532	SMARCA4	positive	chromatin_remodeler	https://www.uniprot.org/uniprotkb/P51532/entry	bromodomain inhibitors; PROTACs in trials
+O00255	MEN1	positive	scaffold	https://www.uniprot.org/uniprotkb/O00255/entry	revumenib (FDA 2024)
+Q14191	WRN	positive	helicase	https://www.uniprot.org/uniprotkb/Q14191/entry	MSI-high cancer target; HRO761 in trials
+P01106	MYC	negative	transcription_factor	https://www.uniprot.org/uniprotkb/P01106/entry	IDR-rich, no orthosteric pocket
+P04637	TP53	negative	transcription_factor	https://www.uniprot.org/uniprotkb/P04637/entry	flat DBD; tumor suppressor reactivators only
+P01116	KRAS	negative	gtpase	https://www.uniprot.org/uniprotkb/P01116/entry	WT KRAS surface; smooth, historically undruggable
+P01111	NRAS	negative	gtpase	https://www.uniprot.org/uniprotkb/P01111/entry	similar to KRAS WT
+P35222	CTNNB1	negative	transcription_factor	https://www.uniprot.org/uniprotkb/P35222/entry	beta-catenin; large flat armadillo interface
+P40763	STAT3	negative	transcription_factor	https://www.uniprot.org/uniprotkb/P40763/entry	SH2 dimerization; hard to drug
+P84022	SMAD3	negative	transcription_factor	https://www.uniprot.org/uniprotkb/P84022/entry	TGF-beta TF; DNA-binding fold
+Q9BZS1	FOXP3	negative	transcription_factor	https://www.uniprot.org/uniprotkb/Q9BZS1/entry	Treg lineage TF
+P01100	FOS	negative	transcription_factor	https://www.uniprot.org/uniprotkb/P01100/entry	bZIP, AP-1 component; largely disordered
+P05412	JUN	negative	transcription_factor	https://www.uniprot.org/uniprotkb/P05412/entry	bZIP, AP-1 partner
+Q16236	NFE2L2	negative	transcription_factor	https://www.uniprot.org/uniprotkb/Q16236/entry	NRF2 core (targeted indirectly via KEAP1)
+Q13568	IRF5	negative	transcription_factor	https://www.uniprot.org/uniprotkb/Q13568/entry	immune TF
+Q01196	RUNX1	negative	transcription_factor	https://www.uniprot.org/uniprotkb/Q01196/entry	AML driver; DNA binding
+P14921	ETS1	negative	transcription_factor	https://www.uniprot.org/uniprotkb/P14921/entry	ETS family TF
+P41134	ID1	negative	transcription_factor	https://www.uniprot.org/uniprotkb/P41134/entry	HLH dominant-negative dimerizer
