@@ -14,3 +14,5 @@ SEQUENCES_TSV = DATA / "sequences.tsv"
 STRUCTURES_DIR = DATA / "structures"
 FUNCTIONS_DIR = DATA / "functions"
 POCKETS_DIR = DATA / "pockets"
+
+OUTPUT = REPO / "output"

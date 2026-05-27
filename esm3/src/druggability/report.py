@@ -1,8 +1,8 @@
 """Generate per-target Markdown reports and a summary report.
 
-Inputs:  data/scores.tsv, data/pockets/<id>/integrated.json, gold_standard.tsv
-Outputs: data/reports/<gene>_<uniprot>.md   (one per target)
-         data/report.md                     (overall summary)
+Inputs:  data/scores.tsv, data/pockets/<id>/integrated.json, references/gold_standard.tsv
+Outputs: output/<gene>_<uniprot>.md   (one per target)
+         output/README.md             (summary, rendered automatically on GitHub)
 """
 
 from __future__ import annotations
@@ -16,10 +16,10 @@ import pandas as pd
 from druggability.paths import (
     DATA,
     GOLD_STANDARD_TSV,
+    OUTPUT,
     POCKETS_DIR,
 )
 
-REPORTS_DIR = DATA / "reports"
 TOP_K_POCKETS = 5
 
 # Plain-English explanation for each confidence band
@@ -159,7 +159,7 @@ def write_target_report(row: pd.Series, integ: dict) -> Path:
     md.append(interpret(row, integ))
     md.append("")
 
-    out = REPORTS_DIR / f"{row['gene']}_{row['uniprot_id']}.md"
+    out = OUTPUT / f"{row['gene']}_{row['uniprot_id']}.md"
     out.write_text("\n".join(md))
     return out
 
@@ -267,10 +267,10 @@ def write_summary(df: pd.DataFrame) -> Path:
     md.append("## Per-target reports")
     md.append("")
     for _, r in df.iterrows():
-        md.append(f"- [{r['gene']} ({r['uniprot_id']})](reports/{r['gene']}_{r['uniprot_id']}.md) — score {_fmt(r['score'])}")
+        md.append(f"- [{r['gene']} ({r['uniprot_id']})]({r['gene']}_{r['uniprot_id']}.md) — score {_fmt(r['score'])}")
     md.append("")
 
-    out = DATA / "report.md"
+    out = OUTPUT / "README.md"
     out.write_text("\n".join(md))
     return out
 
@@ -300,7 +300,7 @@ def main() -> int:
     df = df.drop(columns=[c for c in ("label", "modality", "rationale") if c in df.columns], errors="ignore")
     df = df.merge(gold, on="uniprot_id", how="left")
 
-    REPORTS_DIR.mkdir(parents=True, exist_ok=True)
+    OUTPUT.mkdir(parents=True, exist_ok=True)
     for _, row in df.iterrows():
         integ_path = POCKETS_DIR / row["uniprot_id"] / "integrated.json"
         if not integ_path.exists():
@@ -308,7 +308,7 @@ def main() -> int:
         write_target_report(row, json.loads(integ_path.read_text()))
 
     summary_path = write_summary(df)
-    print(f"Wrote {len(df)} per-target reports to {REPORTS_DIR}")
+    print(f"Wrote {len(df)} per-target reports to {OUTPUT}")
     print(f"Wrote summary to {summary_path}")
     return 0
 
