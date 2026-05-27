@@ -183,8 +183,9 @@ def write_summary(df: pd.DataFrame) -> Path:
         outcome = classify_outcome(r["score"], r.get("label"))
         cav = r.get("caveats", "")
         caveats = cav if isinstance(cav, str) and cav else "—"
+        gene_link = f"[{r['gene']}]({r['gene']}_{r['uniprot_id']}.md)"
         md.append(
-            f"| {r['rank']} | {r['gene']} | {r.get('label', '?')} | "
+            f"| {r['rank']} | {gene_link} | {r.get('label', '?')} | "
             f"{_fmt(r['D'])} | {_fmt(r['F'])} | {_fmt(r['S'])} | "
             f"{_fmt(r['score'])} | `{r.get('confidence', '—')}` | {caveats} | {outcome} |"
         )
@@ -203,7 +204,8 @@ def write_summary(df: pd.DataFrame) -> Path:
         md.append("")
         for _, r in sub.iterrows():
             outcome = classify_outcome(r["score"], r.get("label"))
-            md.append(f"- **{r['gene']}** ({r.get('label', '?')}, score {_fmt(r['score'])}, {outcome})")
+            link = f"[**{r['gene']}**]({r['gene']}_{r['uniprot_id']}.md)"
+            md.append(f"- {link} ({r.get('label', '?')}, score {_fmt(r['score'])}, {outcome})")
         md.append("")
 
     pos = df[df["label"] == "positive"]
@@ -256,12 +258,14 @@ def write_summary(df: pd.DataFrame) -> Path:
     if not fps.empty:
         md.append("**False positives (predicted druggable, gold says undruggable):**")
         for _, r in fps.iterrows():
-            md.append(f"- {r['gene']} (score {_fmt(r['score'])}) — {r.get('rationale', '')}")
+            link = f"[{r['gene']}]({r['gene']}_{r['uniprot_id']}.md)"
+            md.append(f"- {link} (score {_fmt(r['score'])}) — {r.get('rationale', '')}")
         md.append("")
     if not fns.empty:
         md.append("**False negatives (predicted undruggable, gold says druggable):**")
         for _, r in fns.iterrows():
-            md.append(f"- {r['gene']} (score {_fmt(r['score'])}) — {r.get('rationale', '')}")
+            link = f"[{r['gene']}]({r['gene']}_{r['uniprot_id']}.md)"
+            md.append(f"- {link} (score {_fmt(r['score'])}) — {r.get('rationale', '')}")
         md.append("")
 
     md.append("## Per-target reports")
