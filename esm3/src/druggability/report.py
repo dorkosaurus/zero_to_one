@@ -22,6 +22,24 @@ from druggability.paths import (
 REPORTS_DIR = DATA / "reports"
 TOP_K_POCKETS = 5
 
+# Plain-English explanation for each confidence band
+BAND_DESCRIPTIONS = {
+    "strong": "All three signals (geometry, function, fold) agree — trust the verdict.",
+    "likely": "Geometry and function agree, but global fold confidence is shaky. Probably real with a caveat.",
+    "geometry_only": "A strong pocket exists, but no function annotation supports it. Could be a real cryptic site, or a geometric false positive.",
+    "data_limited": "ESM3 declined to produce function annotations for this protein. Geometric signal is real but cannot be cross-checked. Treat as 'unknown', not 'undruggable'.",
+    "likely_undruggable": "Low pocket quality and low fold confidence. The structure-based view says no obvious pocket exists.",
+    "ambiguous": "Mixed signals; manual review recommended.",
+}
+
+CAVEAT_DESCRIPTIONS = {
+    "low_fold_confidence": "Global pTM < 0.4 — ESM3 is uncertain how the protein folds globally. Trust pocket-level pLDDT, not the overall structure.",
+    "disordered_signature": "Mean pLDDT < 0.5 — protein is largely disordered or flexible. Any pocket call should be viewed skeptically.",
+    "no_function_annotations": "ESM3 produced zero function annotations. This is a model blind spot, not evidence of no function.",
+    "annotations_mislocated": "ESM3 produced annotations, but they don't overlap with high-quality pockets. The function track may be confused about this protein.",
+    "multi_domain_confound": "Long protein with low global fold confidence — likely multi-domain. Per-domain analysis may be more informative than whole-protein scoring.",
+}
+
 
 def _fmt(x, n=3):
     if x is None:
@@ -77,10 +95,23 @@ def write_target_report(row: pd.Series, integ: dict) -> Path:
     md.append(f"# {row['gene']}  ({row['uniprot_id']})")
     md.append("")
     md.append(f"**Gold label:** `{row.get('label', '?')}`  •  **Modality:** {row.get('modality', '—')}")
-    md.append(f"**Rank:** {row['rank']} / {row.get('n_total', '?')}  •  **Score:** {_fmt(row['score'])}")
+    md.append(f"**Rank:** {row['rank']} / {row.get('n_total', '?')}  •  **Score:** {_fmt(row['score'])}  •  **Confidence:** `{row.get('confidence', '—')}`")
     md.append("")
     md.append(f"> {row.get('rationale', '')}")
     md.append("")
+
+    band = row.get("confidence")
+    if band in BAND_DESCRIPTIONS:
+        md.append(f"**What `{band}` means:** {BAND_DESCRIPTIONS[band]}")
+        md.append("")
+
+    cav = row.get("caveats", "")
+    caveats = [c for c in str(cav).split(";") if c and c != "nan"] if isinstance(cav, str) else []
+    if caveats:
+        md.append("**Caveats:**")
+        for c in caveats:
+            md.append(f"- `{c}` — {CAVEAT_DESCRIPTIONS.get(c, '')}")
+        md.append("")
 
     md.append("## Score breakdown")
     md.append("")
@@ -146,16 +177,34 @@ def write_summary(df: pd.DataFrame) -> Path:
 
     md.append("## Ranked results")
     md.append("")
-    md.append("| Rank | Gene | Gold | D | F | S | Score | Outcome |")
-    md.append("|---|---|---|---|---|---|---|---|")
+    md.append("| Rank | Gene | Gold | D | F | S | Score | Confidence | Caveats | Outcome |")
+    md.append("|---|---|---|---|---|---|---|---|---|---|")
     for _, r in df.iterrows():
         outcome = classify_outcome(r["score"], r.get("label"))
+        cav = r.get("caveats", "")
+        caveats = cav if isinstance(cav, str) and cav else "—"
         md.append(
             f"| {r['rank']} | {r['gene']} | {r.get('label', '?')} | "
             f"{_fmt(r['D'])} | {_fmt(r['F'])} | {_fmt(r['S'])} | "
-            f"{_fmt(r['score'])} | {outcome} |"
+            f"{_fmt(r['score'])} | `{r.get('confidence', '—')}` | {caveats} | {outcome} |"
         )
     md.append("")
+
+    # Group by confidence band
+    md.append("## Calls by confidence band")
+    md.append("")
+    for band in ["strong", "likely", "geometry_only", "data_limited", "ambiguous", "likely_undruggable"]:
+        sub = df[df["confidence"] == band]
+        if sub.empty:
+            continue
+        md.append(f"### `{band}` (n={len(sub)})")
+        md.append("")
+        md.append(f"_{BAND_DESCRIPTIONS.get(band, '')}_")
+        md.append("")
+        for _, r in sub.iterrows():
+            outcome = classify_outcome(r["score"], r.get("label"))
+            md.append(f"- **{r['gene']}** ({r.get('label', '?')}, score {_fmt(r['score'])}, {outcome})")
+        md.append("")
 
     pos = df[df["label"] == "positive"]
     neg = df[df["label"] == "negative"]
@@ -189,7 +238,13 @@ def write_summary(df: pd.DataFrame) -> Path:
         from sklearn.metrics import roc_auc_score
         y = (df["label"] == "positive").astype(int)
         auc = roc_auc_score(y, df["score"])
-        md.append(f"- **ROC-AUC: {_fmt(auc)}**")
+        md.append(f"- **ROC-AUC (all calls): {_fmt(auc)}**")
+        # Restricted AUC: drop the calls we don't trust (data_limited, ambiguous)
+        trusted = df[~df["confidence"].isin(["data_limited", "ambiguous"])]
+        if len(trusted) > 2 and trusted["label"].nunique() > 1:
+            yt = (trusted["label"] == "positive").astype(int)
+            auc_t = roc_auc_score(yt, trusted["score"])
+            md.append(f"- **ROC-AUC (trusted calls only, n={len(trusted)}): {_fmt(auc_t)}**")
         md.append("")
     except Exception:
         pass

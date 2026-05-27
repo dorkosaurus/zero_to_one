@@ -4,8 +4,9 @@ from pathlib import Path
 
 REPO = Path(__file__).resolve().parents[2]
 
-VALIDATE_TSV = REPO / "validate.tsv"
-GOLD_STANDARD_TSV = REPO / "gold_standard.tsv"
+REFERENCES = REPO / "references"
+VALIDATE_TSV = REFERENCES / "validate.tsv"
+GOLD_STANDARD_TSV = REFERENCES / "gold_standard.tsv"
 
 DATA = REPO / "data"
 SEQUENCES_DIR = DATA / "sequences"

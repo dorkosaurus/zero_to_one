@@ -31,14 +31,58 @@ SASA_NORM = 1000.0  # Å² — typical druggable pocket is 200-800 Å²
 W_D, W_F, W_S = 0.5, 0.3, 0.2
 
 
+def assess_confidence(D: float, F: float, S: float, score: float,
+                      ptm: float | None, mean_plddt: float,
+                      n_narrow: int, length: int) -> tuple[str, list[str]]:
+    """Tag each call with a confidence band and a list of caveats.
+
+    The band describes how much to trust the verdict; the caveats describe
+    specific failure modes the reviewer should be aware of.
+    """
+    caveats: list[str] = []
+    if ptm is not None and ptm < 0.4:
+        caveats.append("low_fold_confidence")  # global pTM < 0.4
+    if mean_plddt < 0.5:
+        caveats.append("disordered_signature")  # mostly low pLDDT
+    if n_narrow == 0:
+        caveats.append("no_function_annotations")  # ESM3 declined
+    elif F < 0.1 and n_narrow >= 10:
+        caveats.append("annotations_mislocated")  # plenty of annot, none hit good pocket
+    if length > 500 and (ptm or 0) < 0.5:
+        caveats.append("multi_domain_confound")  # too big to expect one global fold
+
+    # Confidence band
+    if D >= 0.5 and F >= 0.5 and (ptm or 0) >= 0.5:
+        band = "strong"
+    elif D >= 0.5 and F >= 0.5:
+        band = "likely"  # geometry+function agree but fold is shaky
+    elif D >= 0.4 and "no_function_annotations" in caveats:
+        band = "data_limited"  # pocket exists but model declined to annotate
+    elif D >= 0.5 and F < 0.2:
+        band = "geometry_only"  # pocket exists but no function context
+    elif D < 0.3 and mean_plddt < 0.6:
+        band = "likely_undruggable"  # consistent low signal
+    else:
+        band = "ambiguous"
+
+    return band, caveats
+
+
 def score_protein(integ: dict) -> dict:
     pockets = integ["pockets"]
+    ptm = integ.get("ptm")
+    mean_plddt = integ.get("mean_plddt_global", 0.0)
+    seq_len = integ.get("seq_len", 0)
+    n_narrow = integ.get("n_annotations_narrow", 0)
+
     if not pockets:
+        band, caveats = assess_confidence(0.0, 0.0, 0.0, 0.0, ptm, mean_plddt, n_narrow, seq_len)
         return {
             "D": 0.0, "F": 0.0, "S": 0.0, "score": 0.0,
             "top_pocket_id": None, "top_druggability": 0.0,
             "top_mean_plddt": 0.0, "top_sasa": 0.0,
             "n_pockets": 0, "n_annotated_pockets": 0,
+            "confidence": band, "caveats": ";".join(caveats),
         }
 
     for p in pockets:
@@ -54,6 +98,8 @@ def score_protein(integ: dict) -> dict:
     S = min(top.get("sasa_total", 0.0) / SASA_NORM, 1.0)
     score = W_D * D + W_F * F + W_S * S
 
+    band, caveats = assess_confidence(D, F, S, score, ptm, mean_plddt, n_narrow, seq_len)
+
     return {
         "D": D, "F": F, "S": S, "score": score,
         "top_pocket_id": top["pocket_id"],
@@ -62,6 +108,8 @@ def score_protein(integ: dict) -> dict:
         "top_sasa": top.get("sasa_total", 0.0),
         "n_pockets": len(pockets),
         "n_annotated_pockets": len(annotated),
+        "confidence": band,
+        "caveats": ";".join(caveats),
     }
 
 
