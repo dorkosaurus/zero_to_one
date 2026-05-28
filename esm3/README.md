@@ -38,10 +38,12 @@ The full 20-protein run took ~17 minutes on a 1-core machine. At scale, this is 
 
 Code, instructions, and per-target reports in the comments.
 
-###
+-------------------------
 
 Code:  https://github.com/dorkosaurus/zero_to_one/blob/main/esm3
+
 Instructions: https://github.com/dorkosaurus/zero_to_one/blob/main/esm3/INSTRUCTIONS.md
+
 Summary report: https://github.com/dorkosaurus/zero_to_one/blob/main/esm3/output/README.md  
 
 The summary report links to every target analyzed.
