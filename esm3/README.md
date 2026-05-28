@@ -1,4 +1,4 @@
-# Creating small molecule druggability scores at scale for any protein variant and isoform with ESM3
+# Druggability scoring at scale (for any protein variants and isoforms) with ESM3
 
 Druggability assessment filters drug discovery target lists, but most pipelines are rules-based and sparse, especially for isoforms and variants.  
 
