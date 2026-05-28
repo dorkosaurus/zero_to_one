@@ -1,8 +1,8 @@
-# Creating druggability scores at scale with ESM3
+# Creating small molecule druggability scores at scale for any protein variant and isoform with ESM3
 
-Druggability assessment filters drug discovery target lists, but most pipelines are rules-based and sparse, especially for isoforms and variants.
+Druggability assessment filters drug discovery target lists, but most pipelines are rules-based and sparse, especially for isoforms and variants.  
 
-I tested whether ESM3 (a multimodal model from EvolutionaryScale, now Biohub) could scale this. ESM3 predicts all-atom 3D structures with per-residue confidence (pLDDT) and functional annotations for any sequence.
+Generative Large Biological Models can fill this gap, so I tried ESM3 from Evolutionary Scale (now Biohub).  ESM3 is a multimodal LLM trained on three tracks (sequence, structure, function) that predicts all-atom 3D structures with per-residue confidence (pLDDT) and functional annotations for any sequence.
 
 The pipeline:
 
@@ -12,15 +12,13 @@ The pipeline:
 4. Score: 50% confidence-weighted pocket druggability + 30% function-residue overlap + 20% surface accessibility
 5. Tag every score with confidence so you know what to trust
 
-Results on a 20-protein validation set drawn from a 40-protein gold standard (25 druggable, 15 undruggable):
-
-ROC-AUC 0.79. Top six included five known druggable targets (BTK, ADRB2, NR3C1, BRD4, EGFR) plus one false positive: TP53.
+Results on a 20-protein validation set drawn from a 40-protein gold standard (25 druggable, 15 undruggable): ROC-AUC 0.79, top six included five known druggable targets (BTK, ADRB2, NR3C1, BRD4, EGFR) plus one false positive (TP53).
 
 The misses teach you something:
 
-TP53 ranks high because the pipeline correctly finds a cavity with high druggability score in the DNA-binding domain. But the cavity is a protein-DNA interface: flat, polar, shaped for macromolecular contact, not small molecules. The pipeline reasons on geometry; this is a chemistry problem.
+TP53 ranks high (6/20) because the pipeline correctly finds a cavity with high druggability score in the DNA-binding domain. But the cavity is a protein-DNA interface: flat, polar, shaped for macromolecular contact, not small molecules. The pipeline reasons on geometry; this is a chemistry problem.
 
-BCL2 ranked low even though venetoclax exists. ESM3 produced zero function annotations (a model blind spot), so the pipeline conservatively tagged it "data-limited" rather than committing a call. That's working as intended.
+BCL2 ranked low (16/20) even though venetoclax exists. ESM3 produced zero function annotations (a model blind spot), so the pipeline conservatively tagged it "data-limited" rather than committing a call. That's working as intended.
 
 20-protein run: ~17 minutes on 1 core. Tractable across the entire druggable proteome and every isoform ever sequenced. Code and per-target reports in the comments.
 
