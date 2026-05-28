@@ -5,13 +5,13 @@ PYTHON := $(VENV)/bin/python
 
 help:
 	@echo "Targets:"
-	@echo "  install           install fpocket, P2Rank, Java, and Python deps into ~/venv"
+	@echo "  install           install fpocket and Python deps into ~/venv"
 	@echo "  fetch-sequences   download canonical FASTA for proteins in validate.tsv"
 	@echo "  run-esm3          fold + function-annotate each sequence via Forge API"
 	@echo "  run-pockets       run fpocket on each predicted structure"
 	@echo "  integrate         join pocket geometry with pLDDT + function annotations"
 	@echo "  score             compute D/F/S/score per protein -> data/scores.tsv"
-	@echo "  report            generate per-target reports + summary -> data/reports/, data/report.md"
+	@echo "  report            generate per-target reports + summary -> output/"
 	@echo "  all               run integrate -> score -> report"
 	@echo "  clean             remove generated data/ and __pycache__"
 

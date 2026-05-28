@@ -1,8 +1,6 @@
 """Run fpocket on each predicted structure in data/structures/.
 
-Geometry-based pocket detection (alpha-sphere theory). P2Rank was originally in
-the design as a second, ML-based detector for cross-tool agreement, but the
-JVM's memory footprint is incompatible with this host (1 core, 1.9 GB RAM).
+Geometry-based pocket detection (alpha-sphere theory).
 
 Outputs:
   data/pockets/<id>/fpocket/<id>_out/...   — full fpocket output tree
